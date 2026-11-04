@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coffee Moon — Namangan</title>
+<meta name="description" content="Coffee Moon — Namangandagi premium qahvaxona. Menyu, buyurtma va manzil.">
+<meta property="og:title" content="Coffee Moon"><meta property="og:description" content="More than coffee. It’s a feeling.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600&display=swap">
+<style>
+:root{--bg:#11100F;--bg2:#1C1916;--card:#26211D;--tx:#F5EFE6;--tx2:#B9ADA0;--gold:#C9A46A;--br:#8B7355;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0;line-height:1.05}
+h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:1rem}a{color:inherit}
+section{padding:90px 6vw;max-width:1200px;margin:auto}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;padding:12px 6vw;background:rgba(17,16,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid #2a251f}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;text-decoration:none;margin-right:auto}
+.logo-mark{width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:600 .72rem Manrope,sans-serif;letter-spacing:-.05em}.links{display:flex;gap:22px;align-items:center}.links a{text-decoration:none;color:var(--tx2);font-size:.92rem}.links a:hover{color:var(--gold)}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--gold);color:#11100F;border:0;border-radius:99px;padding:12px 26px;font-weight:600;text-decoration:none;display:inline-block;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}.btn.o{background:none;color:var(--tx);border:1px solid var(--br)}
+.lang button{background:none;border:0;color:var(--tx2);padding:4px}.lang .on{color:var(--gold)}
+#burger{display:none;background:none;border:1px solid var(--br);color:var(--tx);border-radius:8px;padding:6px 10px}
+.hero{min-height:88vh;display:grid;align-content:center;position:relative;max-width:none;overflow:hidden;background:linear-gradient(90deg,rgba(17,16,15,.97) 0%,rgba(17,16,15,.82) 48%,rgba(17,16,15,.32) 100%),url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero>div{max-width:1200px;width:100%;margin:auto}
+.moon{display:none}
+.moon::after{display:none}
+.hero h1{font-size:clamp(2.8rem,8vw,6.2rem);position:relative;max-width:11ch}
+.hero p{color:var(--tx2);max-width:46ch;position:relative}.hero .row{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0;position:relative}
+.meta{color:var(--tx2);font-size:.9rem;position:relative}
+@keyframes rise{from{opacity:0;transform:translateY(60px) scale(.9)}}@keyframes float{50%{transform:translateY(-14px)}}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 30px}.tabs button{background:none;color:var(--tx2);border:1px solid #3a322a;border-radius:99px;padding:8px 18px}.tabs .on{background:var(--gold);color:#11100F;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.art{height:190px;border-radius:14px;background:#1C1916;overflow:hidden}
+.art img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s}
+.card:hover .art img{transform:scale(1.07)}
+.card p{color:var(--tx2);font-size:.88rem;margin:0;flex:1}.card .f{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{color:var(--gold);font-weight:600}.sz{color:var(--tx2);font-size:.8rem}
+.add{background:none;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:6px 14px}.add:hover{background:var(--gold);color:#11100F}
+#fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--gold);color:#11100F;border:0;border-radius:99px;padding:14px 22px;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+#drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--bg2);z-index:40;transform:translateX(105%);transition:transform .4s;padding:24px;padding-top:calc(24px + env(safe-area-inset-top,0px));overflow:auto;border-left:1px solid #3a322a}
+#drawer.open{transform:none}
+.line{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #2f2822}
+.q button{width:28px;height:28px;border-radius:50%;border:1px solid var(--br);background:none;color:var(--tx)}
+input,textarea,select{width:100%;background:var(--card);border:1px solid #3a322a;color:var(--tx);border-radius:12px;padding:11px;margin:6px 0;font:inherit}
+.demo{background:#3a2d1c;color:var(--gold);border-radius:10px;padding:8px 12px;font-size:.8rem;margin-bottom:12px}
+.ok{color:var(--gold);padding:12px 0}
+.masonry{columns:3 200px;gap:14px}.masonry button{display:block;width:100%;margin:0 0 14px;border:0;border-radius:18px;padding:0;overflow:hidden;background:var(--card);break-inside:avoid;transition:transform .3s}
+.masonry button:hover{transform:scale(1.02)}.masonry img{display:block;width:100%;height:auto;min-height:180px;object-fit:cover;transition:transform .4s}.masonry button:hover img{transform:scale(1.03)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;display:none;place-items:center;padding:6vw}#lb.open{display:grid}#lb img{max-width: min(90vw,1100px);max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:20px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}.about-photos div{position:relative;height:170px;border-radius:16px;overflow:hidden}.about-photos img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.78)}.about-photos span{position:absolute;left:14px;bottom:12px;font-weight:600;text-shadow:0 2px 8px #000}.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.why div{background:var(--bg2);border:1px solid #2f2822;border-radius:18px;padding:18px}
+.rev{border:1px dashed var(--br);border-radius:22px;padding:30px;color:var(--tx2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}.band{background:var(--bg2);max-width:none}.band>div{max-width:1200px;margin:auto}
+footer{border-top:1px solid #2a251f;padding:40px 6vw;color:var(--tx2);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(max-width:820px){.links{position:absolute;top:100%;left:0;right:0;background:var(--bg2);flex-direction:column;padding:20px;display:none}.links.open{display:flex}#burger{display:block}.two{grid-template-columns:1fr}.moon{opacity:.35}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style></head><body>
+<nav><a class="logo" href="#home" aria-label="Coffee Moon"><span class="logo-mark">CM</span>Coffee Moon</a>
+<button id="burger" aria-label="Menyuni ochish">Menyu</button>
+<div class="links" id="links"><a href="#home" data-i="n1"></a><a href="#about" data-i="n2"></a><a href="#menu" data-i="n3"></a><a href="#gallery" data-i="n4"></a><a href="#contact" data-i="n5"></a>
+<span class="lang"><button class="on" data-l="uz">UZ</button><button data-l="ru">RU</button><button data-l="en">EN</button></span>
+<a class="btn" href="#menu" data-i="order"></a></div></nav>
+
+<section class="hero" id="home"><div>
+
+<p style="color:var(--gold);letter-spacing:.2em;font-size:.8rem">WELCOME TO COFFEE MOON</p>
+<h1 data-i="h1"></h1><p data-i="hp"></p>
+<div class="row"><a class="btn" href="#menu" data-i="seeMenu"></a><a class="btn o" href="#contact" data-i="visit"></a></div>
+<div class="meta">⭐ 5.0 · 109 reviews · Namangan, Uzbekistan</div></div></section>
+
+<section id="about" class="reveal"><div class="two"><div><h2>A little place. A lot of magic.</h2><p style="color:var(--tx2)" data-i="aboutP"></p></div>
+<div class="about-photos">
+<div><img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=700&q=85" alt="Espresso qahvasi"><span>Espresso</span></div>
+<div><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=700&q=85" alt="Qahva tayyorlash jarayoni"><span>Moonlight</span></div>
+<div><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=85" alt="Sovuq qahva"><span>Cold drinks</span></div>
+<div><img src="https://images.unsplash.com/photo-1542990253-0b8be8e7e6e5?auto=format&fit=crop&w=700&q=85" alt="Shokoladli ichimlik"><span>Chocolate</span></div>
+</div></div></section>
+
+<section class="band" id="menu"><div class="reveal"><h2 data-i="menuT"></h2><div class="tabs" id="tabs"></div><div class="grid" id="grid"></div></div></section>
+
+<section id="gallery" class="reveal"><h2>Moments at Coffee Moon</h2><p style="color:var(--tx2);margin-top:-8px">Coffee Moon atmosferasini aks ettiruvchi fotosuratlar</p><div class="masonry" id="mas"></div></section>
+
+<section class="band"><div class="reveal"><h2>Why People Love Coffee Moon</h2><div class="why" id="why"></div></div></section>
+
+<section class="reveal"><h2>What Our Guests Say</h2><p style="font-size:2rem;margin:0;color:var(--gold)">5.0 / 5</p><p style="color:var(--tx2)">109 ta baho · Google</p>
+<div class="rev" id="revs">Haqiqiy mijoz sharhlari shu yerga qo‘shiladi. <small>(Soxta sharhlar yaratilmagan — <code>REVIEWS</code> massivini to‘ldiring.)</small></div></section>
+
+<section class="band" id="contact"><div class="reveal two"><div><h2>Find Your Way to Coffee Moon</h2>
+<p style="color:var(--tx2)">Manzil: Namangan shahri, 4-kichik nohiya, 2<br>Telefon: +998 95 257 74 44<br>Ish vaqti: 03:00 gacha ochiq<br>Kapuchino: 20 000 – 25 000 so‘m</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="tel:+998952577444">Qo‘ng‘iroq qilish</a>
+<a class="btn o" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Coffee+Moon+Namangan">Yo‘nalishni ko‘rish</a>
+<button class="btn o" id="copy">Manzilni nusxalash</button></div>
+<p class="sz">Xarita: aniq koordinata berilmagani uchun Google Maps qidiruviga havola qo‘yildi.</p></div>
+<form id="cf" onsubmit="return false"><h3 style="font-size:1.8rem">Aloqa formasi</h3><input placeholder="Ism" required><input placeholder="Telefon" type="tel"><textarea rows="4" placeholder="Xabar"></textarea><button class="btn" id="cs">Yuborish</button><div class="ok" id="cok"></div></form></div></section>
+
+<footer><div><b style="font-family:'Cormorant Garamond';font-size:1.4rem">Coffee Moon</b><br>More than coffee. It’s a feeling.</div>
+<div><a href="#menu">Menyu</a><br><a href="#gallery">Galereya</a><br><a href="#contact">Aloqa</a></div>
+<div>+998 95 257 74 44<br>Namangan, 4-kichik nohiya, 2<br>Ijtimoiy tarmoqlar: havolalar keyin qo‘shiladi</div><div>© 2026 Coffee Moon</div></footer>
+
+<button id="fab">Savat · <span id="cnt">0</span> · <span id="tot">0</span></button>
+<aside id="drawer" aria-label="Savat"><div style="display:flex;justify-content:space-between"><h3 style="font-size:2rem">Savat</h3><button id="x" style="background:none;border:0;color:var(--tx);font-size:1.6rem">✕</button></div>
+<div id="lines"></div><p><b>Jami: <span class="price" id="tot2">0</span> so‘m</b></p>
+<div class="demo">DEMO: buyurtma hozircha serverga yuborilmaydi. Integratsiya uchun <code>sendOrder()</code> funksiyasiga Telegram bot yoki API ulang.</div>
+<form id="of" onsubmit="return false"><input id="nm" placeholder="Ism" required><input id="ph" type="tel" placeholder="Telefon" required>
+<select id="tp"><option>Qahvaxonada iste’mol qilish</option><option>Olib ketish</option><option>Yetkazib berish</option></select><textarea id="nt" rows="2" placeholder="Qo‘shimcha izoh"></textarea><button class="btn" style="width:100%" id="ob">Buyurtma berish</button></form><div class="ok" id="ook"></div></aside>
+<div id="lb" role="dialog" aria-label="Lightbox"></div>
+
+<script>
+const T={uz:{n1:"Bosh sahifa",n2:"Biz haqimizda",n3:"Menyu",n4:"Galereya",n5:"Aloqa",order:"Buyurtma berish",h1:"O‘z lahzangizni toping. Sehrli ta’mni his eting.",hp:"Har bir finjonda o‘zgacha ta’m, har bir tashrifda unutilmas atmosfera. Coffee Moon — qahva va yoqimli lahzalar uchrashadigan maskan.",seeMenu:"Menyuni ko‘rish",visit:"Bizga tashrif buyuring",aboutP:"Coffee Moon — Namangan shahrida joylashgan, qahva va turli xil mazali ichimliklardan bahramand bo‘lishingiz mumkin bo‘lgan zamonaviy qahvaxona. Bizning maqsadimiz — mehmonlarimiz uchun yoqimli muhit va unutilmas lahzalar yaratish.",menuT:"Menyu"},
+ru:{n1:"Главная",n2:"О нас",n3:"Меню",n4:"Галерея",n5:"Контакты",order:"Заказать",h1:"Найдите свой момент. Почувствуйте магию вкуса.",hp:"Особый вкус в каждой чашке и незабываемая атмосфера в каждый визит. Coffee Moon — место, где встречаются кофе и приятные мгновения.",seeMenu:"Смотреть меню",visit:"Приходите к нам",aboutP:"Coffee Moon — современная кофейня в Намангане, где можно насладиться кофе и разными вкусными напитками. Наша цель — уютная атмосфера и незабываемые моменты для гостей.",menuT:"Меню"},
+en:{n1:"Home",n2:"About",n3:"Menu",n4:"Gallery",n5:"Contact",order:"Order now",h1:"Find Your Moment. Taste The Magic.",hp:"A distinct taste in every cup, an unforgettable atmosphere with every visit. Coffee Moon is where coffee meets lovely moments.",seeMenu:"View menu",visit:"Visit us",aboutP:"Coffee Moon is a modern coffee shop in Namangan where you can enjoy coffee and a range of delicious drinks. Our aim is a cosy setting and memorable moments for our guests.",menuT:"Menu"}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function setL(l){document.documentElement.lang=l;$$('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);$$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l==l))}
+$$('.lang button').forEach(b=>b.onclick=()=>setL(b.dataset.l));setL('uz');
+$('#burger').onclick=()=>$('#links').classList.toggle('open');$$('.links a').forEach(a=>a.addEventListener('click',()=>$('#links').classList.remove('open')));
+const CATS=["Hot Coffee","Cold Coffee","Chocolate","Smoothies","Refreshing Drinks"];
+const M=[["Americano",20000,250,0,"Yumshoq ta’m va yoqimli qahva aromatiga ega klassik ichimlik.","#6b4a2f"],["Latte",25000,250,0,"Mayin sut ko‘pigi va qahvaning uyg‘un ta’mi.","#b08a62"],["Flat White",30000,250,0,"Kuchli qahva ta’mi va nafis sut teksturasining uyg‘unligi.","#c4a07a"],["Hot Chocolate",30000,250,2,"To‘yimli, mazali va yoqimli shokoladli ichimlik.","#4a2c1d"],["Ice Americano",25000,500,1,"Muzdek, yengil va tetiklashtiruvchi sovuq qahva.","#5a3b26"],["Ice Latte",30000,500,1,"Sut va qahvaning sovuq, mayin uyg‘unligi.","#c9a982"],["Ice Frappuccino",40000,500,1,"Muzdek, qaymoqsimon teksturaga ega tetiklashtiruvchi qahva.","#d4b48c"],["Raspberry Banana Smoothie",35000,500,3,"Malina va bananning mazali va tetiklashtiruvchi uyg‘unligi.","#d2607a"],["Mojito",25000,500,4,"Yalpizning tetiklashtiruvchi ta’miga ega sovuq ichimlik.","#7fae6a"]];
+const PHOTO=[
+"https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1561882468-9110e03e0f78?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1542990253-0b8be8e7e6e5?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=900&q=85",
+"https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=900&q=85"
+];
+const fmt=n=>n.toLocaleString('ru-RU').replace(/\u00a0/g,' ');
+let cat=-1,cart={};
+$('#tabs').innerHTML=['Hammasi',...CATS].map((c,i)=>`<button data-c="${i-1}" class="${i?'':'on'}">${c}</button>`).join('');
+$('#tabs').onclick=e=>{if(!e.target.dataset.c)return;cat=+e.target.dataset.c;$$('#tabs button').forEach(b=>b.classList.toggle('on',b==e.target));draw()};
+function draw(){$('#grid').innerHTML=M.map((m,i)=>[m,i]).filter(([m])=>cat<0||m[3]==cat).map(([m,i])=>`<article class="card"><div class="art"><img src="${PHOTO[i]}" alt="${m[0]} ichimligi" loading="lazy"></div><h3 style="font-size:1.6rem">${m[0]}</h3><p>${m[4]}</p><div class="f"><span><span class="price">${fmt(m[1])} so‘m</span><br><span class="sz">${m[2]} ml</span></span><button class="add" data-a="${i}">+ Savatga</button></div></article>`).join('')}
+draw();
+$('#grid').onclick=e=>{const a=e.target.dataset.a;if(a!=null){cart[a]=(cart[a]||0)+1;upd();e.target.textContent='✓';setTimeout(()=>e.target.textContent='+ Savatga',700)}};
+function upd(){const ks=Object.keys(cart);let t=0,c=0;$('#lines').innerHTML=ks.length?ks.map(k=>{t+=M[k][1]*cart[k];c+=cart[k];return `<div class="line"><span>${M[k][0]}<br><span class="sz">${fmt(M[k][1])} so‘m</span></span><span class="q"><button data-d="${k}" aria-label="Kamaytirish">−</button> ${cart[k]} <button data-u="${k}" aria-label="Ko‘paytirish">+</button></span></div>`}).join(''):'<p class="sz">Savat bo‘sh. Menyudan ichimlik tanlang.</p>';$('#cnt').textContent=c;$('#tot').textContent=fmt(t);$('#tot2').textContent=fmt(t)}
+$('#lines').onclick=e=>{const d=e.target.dataset;if(d.u)cart[d.u]++;if(d.d&&--cart[d.d]<1)delete cart[d.d];upd()};
+$('#fab').onclick=()=>$('#drawer').classList.add('open');$('#x').onclick=()=>$('#drawer').classList.remove('open');
+// Integratsiya nuqtasi: Telegram bot yoki backend API shu yerga ulanadi
+async function sendOrder(order){/* await fetch('/api/order',{method:'POST',body:JSON.stringify(order)}) */return new Promise(r=>setTimeout(r,600))}
+$('#ob').onclick=async()=>{if(!Object.keys(cart).length){$('#ook').textContent='Avval savatga ichimlik qo‘shing.';return}if(!$('#nm').value||!$('#ph').value){$('#ook').textContent='Ism va telefonni kiriting.';return}
+const order={name:$('#nm').value,phone:$('#ph').value,type:$('#tp').value,note:$('#nt').value,items:Object.entries(cart).map(([k,q])=>({name:M[k][0],qty:q,price:M[k][1]}))};
+$('#ob').disabled=true;await sendOrder(order);$('#ob').disabled=false;$('#ook').textContent='Demo: buyurtma qabul qilindi (hech qayerga yuborilmadi). Rahmat, '+order.name+'!';cart={};upd()};
+const G=[
+["Qahvaxona interyeri","https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85"],
+["Barista va qahva","https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1000&q=85"],
+["Americano","https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=1000&q=85"],
+["Latte art","https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85"],
+["Sovuq frappuccino","https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=1000&q=85"],
+["Mojito","https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=1000&q=85"],
+["Qahva va desert","https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"],
+["Qahva atmosferasi","https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=85"]
+];
+$('#mas').innerHTML=G.map((g,i)=>`<button data-g="${i}" aria-label="${g[0]}"><img src="${g[1]}" alt="${g[0]}" loading="lazy"></button>`).join('');
+$('#mas').onclick=e=>{const b=e.target.closest('button');if(b){const g=G[+b.dataset.g];$('#lb').innerHTML=`<img src="${g[1]}" alt="${g[0]}">` ;$('#lb').classList.add('open')}};
+$('#why').innerHTML=["5.0 Google reyting","109 ta baho","Issiq va sovuq ichimliklar","Shinam atmosfera","Wi-Fi","Karta orqali to‘lov","Yozgi ayvoncha","Avtoturargoh","Olib ketish","Yetkazib berish"].map(x=>`<div>${x}</div>`).join('');
+$('#copy').onclick=async()=>{try{await navigator.clipboard.writeText('Namangan shahri, 4-kichik nohiya, 2');$('#copy').textContent='Nusxalandi ✓'}catch(e){$('#copy').textContent='Nusxalab bo‘lmadi'}};
+$('#cs').onclick=()=>{$('#cok').textContent='Demo: xabar yuborilmadi — backend ulanmagan.'};
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});$$('.reveal').forEach(e=>io.observe(e));
+</script></body></html>
